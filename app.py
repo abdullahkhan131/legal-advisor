@@ -1,5 +1,5 @@
 import streamlit as st
-import cv2
+
 import PyPDF2
 
 # ... (rest of your code, including blob detector parameters and imports for Chroma and other libraries)

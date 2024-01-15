@@ -1,10 +1,20 @@
 import streamlit as st
+import cv2
+import PyPDF2  # Added for PDF handling
 
-import PyPDF2
+# Initialize blob detector parameters (unchanged)
+blob_params = cv2.SimpleBlobDetector_Params()
+blob_params.filterByInertia = False
+blob_params.filterByConvexity = False
+blob_params.filterByColor = True
+blob_params.blobColor = 0
+blob_params.filterByCircularity = True
+blob_params.filterByArea = False
+blob_detector = cv2.SimpleBlobDetector_create(blob_params)
 
-# ... (rest of your code, including blob detector parameters and imports for Chroma and other libraries)
 
 st.set_page_config(layout="wide")
+
 
 col1, col2 = st.columns([1, 4])
 
@@ -54,4 +64,4 @@ with col2:
             st.error("Error analyzing the warrant:", e)
 
     # User input features (unchanged)
-    # ... (rest of your user input features code)
+
